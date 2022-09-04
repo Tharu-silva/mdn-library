@@ -1,7 +1,7 @@
 const Book = require('../models/book');
 
 exports.index = (req, res) => {
-  res.render('index', {title: 'Itachi'});
+  res.send('NOT IMPLEMENTED: Site Home Page');
 };
 
 // Display list of all books.

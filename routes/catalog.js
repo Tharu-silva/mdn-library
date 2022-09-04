@@ -117,6 +117,6 @@ router.get('/bookinstances', book_instance_controller.bookinstance_list);
 module.exports = router;
 
 /*
-Think of a router as a object where asssociaten and bind the url, http verb 
+Think of a router as a object where it associates and binds the url, http verb 
 and the middleware function
 */
