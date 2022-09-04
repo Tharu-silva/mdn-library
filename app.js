@@ -3,7 +3,7 @@ var express = require('express');
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
-const mongoDB = 'mongodb+srv://Tharu:Space2003@mdnlib.ucvjvtu.mongodb.net/?retryWrites=true&w=majority';
+const mongoDB = 'mongodb+srv://Tharu:Y3DxMsspn54pSALu@mdnlib.ucvjvtu.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
@@ -14,7 +14,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+const catalogRouter = require('./routes/catalog'); 
+//Import routes for "catalog" area of site
 var app = express();
 
 // view engine setup
@@ -29,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use('/catalog', catalogRouter)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
